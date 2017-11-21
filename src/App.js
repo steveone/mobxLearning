@@ -9,7 +9,8 @@ import {setter} from 'mobx-decorators'
 
 
 var appState = observable({
-    timer: 0
+    timer: 0,
+    item: []
 });
 
 var increment = function(){
@@ -18,6 +19,13 @@ var increment = function(){
 var decrement = function(){
   appState.timer--;
 }
+
+var addItem = function(name){
+  appState.item.push(name)
+  console.log("Added item with name ")
+  console.log(name)
+}
+
 
 /*
 setInterval(action(function tick() {
@@ -32,7 +40,7 @@ class App extends Component {
     return (
       <div className="App">
         <DevTools />
-         <Test name={appState} inc={increment} dec={decrement}/>
+         <Test name={appState} inc={increment} dec={decrement} addItem={addItem}/>
       </div>
     );
   }
