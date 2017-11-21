@@ -10,7 +10,7 @@ import {setter} from 'mobx-decorators'
 
 var appState = observable({
     timer: 0,
-    item: []
+    item: ["something","test","somethingelse","three"]
 });
 
 var increment = function(){
